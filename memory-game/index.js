@@ -48,4 +48,12 @@ function resetBoard() {
   [firstCard, secondCard] = [null, null];
 }
 
+function shuffle() {
+  cards.forEach((card) => {
+    let ramdomPos = Math.floor(Math.random() * 16);
+    card.style.order = ramdomPos;
+  });
+}
+
+shuffle();
 cards.forEach((card) => card.addEventListener('click', flipCard));
