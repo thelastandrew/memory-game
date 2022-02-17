@@ -68,8 +68,10 @@ function displayCurrentScore() {
 function refreshBoard() {
   currentScoreCounter = 0;
   displayCurrentScore();
-  cards.forEach((card) => card.classList.remove('flip'));
-  cards.forEach((card) => card.addEventListener('click', flipCard));
+  cards.forEach((card) => {
+    card.classList.remove('flip');
+    card.addEventListener('click', flipCard);
+  });
   shuffle();
 }
 
