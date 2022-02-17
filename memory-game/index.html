@@ -7,9 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Memory Game</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="./assets/img/png/icon.png" sizes="any">
 </head>
 
 <body>
+  <h1 class="title">Memory Game</h1>
   <section class="memory-game">
     <div class="memory-card" data-framework="band">
       <img class="front-face" src="./assets/img/png/band.png" alt="Band">
@@ -75,6 +77,12 @@
       <img class="front-face" src="./assets/img/png/sunglasses.png" alt="Sunglasses">
       <img src="./assets/img/png/maloik.png" alt="Memory Card" class="back-face">
     </div>
+  </section>
+  <section class="controls">
+    <p class="score">
+      Current score: <span class="result"></span>
+    </p>
+    <button class="refresh-btn">Refresh <img src="./assets/img/png/reset.png" alt="Refresh"></button>
   </section>
   <script src="./index.js"></script>
 </body>

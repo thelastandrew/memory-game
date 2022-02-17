@@ -7,13 +7,21 @@
 }
 
 body {
+  font-family: Arial, Helvetica, sans-serif;
   height: 100vh;
   background-color: rgb(241, 191, 150);
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 2em;
 }
 
 .memory-game {
-  margin: auto;
   width: 600px;
   height: 600px;
   display: flex;
@@ -28,10 +36,11 @@ body {
   margin: 5px;
   transform: scale(1);
   transform-style: preserve-3d;
-  transition: transform 0.5s;
+  transition: transform 0.3s;
 }
 
-.memory-card:active {
+.memory-card:active,
+.refresh-btn:active {
   transform: scale(0.97);
   transition: transform 0.2s;
 }
@@ -53,4 +62,29 @@ body {
 
 .front-face {
   transform: rotateY(180deg);
+}
+
+.controls {
+  width: 600px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 16px;
+  line-height: 2em;
+}
+
+.refresh-btn {
+  cursor: pointer;
+  border: none;
+  background-color: rgb(221, 121, 39);
+  border-radius: 10px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.refresh-btn img {
+  height: 16px;
 }
