@@ -65,6 +65,15 @@ function displayCurrentScore() {
   result.innerHTML = currentScoreCounter;
 }
 
+function refreshBoard() {
+  currentScoreCounter = 0;
+  displayCurrentScore();
+  cards.forEach((card) => card.classList.remove('flip'));
+  cards.forEach((card) => card.addEventListener('click', flipCard));
+  shuffle();
+}
+
 shuffle();
 displayCurrentScore();
 cards.forEach((card) => card.addEventListener('click', flipCard));
+refreshBtn.addEventListener('click', refreshBoard);
