@@ -1,7 +1,10 @@
 const cards = document.querySelectorAll('.memory-card');
+const result = document.querySelector('.result');
+const refreshBtn = document.querySelector('.refresh-btn');
 let hasFlippedCard = false;
 let firstCard, secondCard;
 let lockBoard = false;
+let currentScoreCounter = 0;
 
 function flipCard() {
   if (lockBoard) return;
@@ -21,6 +24,9 @@ function flipCard() {
 }
 
 function checkForMatch() {
+  currentScoreCounter += 1;
+  displayCurrentScore();
+
   if (firstCard.dataset.framework === secondCard.dataset.framework) {
     disableCards();
     return;
@@ -55,5 +61,10 @@ function shuffle() {
   });
 }
 
+function displayCurrentScore() {
+  result.innerHTML = currentScoreCounter;
+}
+
 shuffle();
+displayCurrentScore();
 cards.forEach((card) => card.addEventListener('click', flipCard));
