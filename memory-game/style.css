@@ -22,8 +22,14 @@ body {
 }
 
 .memory-game {
-  width: 600px;
-  height: 600px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.board {
+  width: 500px;
+  height: 500px;
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
@@ -64,9 +70,17 @@ body {
   transform: rotateY(180deg);
 }
 
+.table {
+  width: 100px;
+  margin-left: 20px;
+}
+
 .controls {
-  width: 600px;
-  margin-top: 10px;
+  width: 620px;
+}
+
+.container {
+  width: 500px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -87,4 +101,5 @@ body {
 
 .refresh-btn img {
   height: 16px;
+  margin-left: 3px;
 }
