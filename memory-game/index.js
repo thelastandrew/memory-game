@@ -6,7 +6,6 @@ let firstCard, secondCard;
 let lockBoard = false;
 let currentScoreCounter = 0;
 let recordsList = [];
-recordsList.length = 10;
 
 function flipCard() {
   if (lockBoard) return;
@@ -82,7 +81,16 @@ function isOver() {
   if (flippedCards.length === 16) {
     setTimeout(() => {
       console.log('game over!');
-    }, 1200);
+    }, 1000);
+    writeRecord();
+  }
+}
+
+function writeRecord() {
+  if (isOver) {
+    recordsList.unshift(currentScoreCounter);
+    recordsList.length = 10;
+    cards.forEach((card) => card.removeEventListener('click', isOver));
   }
 }
 
