@@ -5,6 +5,8 @@ let hasFlippedCard = false;
 let firstCard, secondCard;
 let lockBoard = false;
 let currentScoreCounter = 0;
+let recordsList = [];
+recordsList.length = 10;
 
 function flipCard() {
   if (lockBoard) return;
@@ -75,7 +77,17 @@ function refreshBoard() {
   shuffle();
 }
 
+function isOver() {
+  let flippedCards = document.querySelectorAll('.flip');
+  if (flippedCards.length === 16) {
+    setTimeout(() => {
+      console.log('game over!');
+    }, 1200);
+  }
+}
+
 shuffle();
 displayCurrentScore();
 cards.forEach((card) => card.addEventListener('click', flipCard));
+cards.forEach((card) => card.addEventListener('click', isOver));
 refreshBtn.addEventListener('click', refreshBoard);
