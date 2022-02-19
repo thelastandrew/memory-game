@@ -6,6 +6,7 @@ let firstCard, secondCard;
 let lockBoard = false;
 let currentScoreCounter = 0;
 let recordsList = [];
+const scoreRecord = document.querySelectorAll('.score-rec');
 
 function flipCard() {
   if (lockBoard) return;
@@ -74,6 +75,8 @@ function refreshBoard() {
     card.addEventListener('click', flipCard);
   });
   shuffle();
+  showScore();
+  cards.forEach((card) => card.addEventListener('click', isOver));
 }
 
 function isOver() {
@@ -94,8 +97,21 @@ function writeRecord() {
   }
 }
 
+function showScore() {
+  scoreRecord.forEach((record, n) => {
+    if (record.classList.contains(`${n + 1}`)) {
+      if (recordsList[n] === undefined) {
+        record.innerHTML = '0';
+      } else {
+        record.innerHTML = recordsList[n];
+      }
+    }
+  });
+}
+
 shuffle();
 displayCurrentScore();
+showScore();
 cards.forEach((card) => card.addEventListener('click', flipCard));
 cards.forEach((card) => card.addEventListener('click', isOver));
 refreshBtn.addEventListener('click', refreshBoard);
