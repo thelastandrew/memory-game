@@ -109,9 +109,29 @@ function showScore() {
   });
 }
 
+function setLocalStorage() {
+  for (let i = 0; i < 10; i++) {
+    localStorage.setItem(`rec${i}`, recordsList[i]);
+  }
+}
+
+function getLocalStorage() {
+  for (let i = 0; i < 10; i++) {
+    if (localStorage.getItem(`rec${i}`) === 'null') {
+      recordsList[i] = 0;
+    } else {
+      recordsList[i] = localStorage.getItem(`rec${i}`);
+    }
+  }
+}
+
 shuffle();
 displayCurrentScore();
 showScore();
 cards.forEach((card) => card.addEventListener('click', flipCard));
 cards.forEach((card) => card.addEventListener('click', isOver));
 refreshBtn.addEventListener('click', refreshBoard);
+
+window.addEventListener('beforeunload', setLocalStorage);
+window.addEventListener('load', getLocalStorage);
+window.addEventListener('load', showScore);
