@@ -52,7 +52,7 @@ a {
 }
 
 .memory-card:active,
-.refresh-btn:active {
+.restart-btn:active {
   transform: scale(0.97);
   transition: transform 0.2s;
 }
@@ -95,7 +95,7 @@ a {
   line-height: 2em;
 }
 
-.refresh-btn {
+.restart-btn {
   cursor: pointer;
   border: none;
   background-color: rgb(221, 121, 39);
@@ -106,7 +106,7 @@ a {
   align-items: center;
 }
 
-.refresh-btn img {
+.restart-btn img {
   height: 16px;
   margin-left: 3px;
 }
@@ -151,6 +151,10 @@ a {
 
 .congrats button {
   border: 1px solid black;
+}
+
+.hidden {
+  display: none;
 }
 
 .footer {

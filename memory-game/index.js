@@ -1,12 +1,13 @@
 const cards = document.querySelectorAll('.memory-card');
-const result = document.querySelector('.result');
-const refreshBtn = document.querySelector('.refresh-btn');
+const result = document.querySelectorAll('.result');
+const restartBtn = document.querySelectorAll('.restart-btn');
 let hasFlippedCard = false;
 let firstCard, secondCard;
 let lockBoard = false;
 let currentScoreCounter = 0;
 let recordsList = [];
 const scoreRecord = document.querySelectorAll('.score-rec');
+const congratsBoard = document.querySelector('.congrats-bg');
 
 function flipCard() {
   if (lockBoard) return;
@@ -64,7 +65,9 @@ function shuffle() {
 }
 
 function displayCurrentScore() {
-  result.innerHTML = currentScoreCounter;
+  result.forEach((e) => {
+    e.innerHTML = currentScoreCounter;
+  });
 }
 
 function refreshBoard() {
@@ -76,6 +79,7 @@ function refreshBoard() {
   });
   shuffle();
   showScore();
+  hideCongrats();
   cards.forEach((card) => card.addEventListener('click', isOver));
 }
 
@@ -83,7 +87,7 @@ function isOver() {
   let flippedCards = document.querySelectorAll('.flip');
   if (flippedCards.length === 16) {
     setTimeout(() => {
-      console.log('game over!');
+      showCongrats();
     }, 1000);
     writeRecord();
   }
@@ -125,12 +129,22 @@ function getLocalStorage() {
   }
 }
 
+function showCongrats() {
+  congratsBoard.classList.remove('hidden');
+}
+
+function hideCongrats() {
+  congratsBoard.classList.add('hidden');
+}
+
 shuffle();
 displayCurrentScore();
 showScore();
 cards.forEach((card) => card.addEventListener('click', flipCard));
 cards.forEach((card) => card.addEventListener('click', isOver));
-refreshBtn.addEventListener('click', refreshBoard);
+restartBtn.forEach((btn) => {
+  btn.addEventListener('click', refreshBoard);
+});
 
 window.addEventListener('beforeunload', setLocalStorage);
 window.addEventListener('load', getLocalStorage);
