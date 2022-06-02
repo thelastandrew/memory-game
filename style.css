@@ -1,0 +1,179 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  background-color: rgb(241, 191, 150);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 2em;
+}
+
+.memory-game {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.board {
+  width: 450px;
+  height: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(25% - 10px);
+  position: relative;
+  margin: 5px;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.memory-card:active,
+.restart-btn:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  background-color: rgb(221, 121, 39);
+  border-radius: 10px;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+.table {
+  width: 100px;
+  margin-left: 20px;
+}
+
+.controls {
+  width: 570px;
+  margin-bottom: 10px;
+}
+
+.container {
+  width: 450px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 16px;
+  line-height: 2em;
+}
+
+.restart-btn {
+  cursor: pointer;
+  border: none;
+  background-color: rgb(221, 121, 39);
+  border-radius: 10px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.restart-btn img {
+  height: 16px;
+  margin-left: 3px;
+}
+
+.congrats-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+}
+
+.congrats {
+  width: 600px;
+  height: 500px;
+  margin: auto;
+  padding: 10px;
+  background-color: rgb(221, 121, 39);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.congrats-text {
+  font-size: 36px;
+}
+
+.congrats-img {
+  width: 100px;
+  height: 100px;
+}
+
+.congrats-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.congrats button {
+  border: 1px solid black;
+}
+
+.hidden {
+  display: none;
+}
+
+.footer {
+  width: 570px;
+}
+
+.footer img {
+  height: 20px;
+}
+
+.credits {
+  font-size: 12px;
+  color: rgb(221, 121, 39);
+}
+
+.credits a {
+  transition: 0.3s;
+}
+
+.credits a:hover {
+  color: rgb(126, 70, 24);
+}
