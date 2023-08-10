@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="./assets/img/png/icon.png" sizes="any">
+</head>
+
+<body>
+  <h1 class="title">Memory Game</h1>
+  <section class="memory-game">
+    <div class="board">
+      <div class="memory-card" data-framework="band">
+        <img class="front-face" src="./assets/img/png/band.png" alt="Band">
+        <img src="./assets/img/png/maloik.png" alt="Memory Card" class="back-face">
+      </div>
+      <div class="memory-card" data-framework="band">
+        <img class="front-face" src="./assets/img/png/band.png" alt="Band">
+        <img src="./assets/img/png/maloik.png" alt="Memory Card" class="back-face">
+      </div>
+      <div class="memory-card" data-framework="cassette">
+        <img class="front-face" src="./assets/img/png/cassette.png" alt="Cassette">
+        <img src="./assets/img/png/maloik.png" alt="Memory Card" class="back-face">
+      </div>
+      <div class="memory-card" data-framework="cassette">
+        <img class="front-face" src="./assets/img/png/cassette.png" alt="Cassette">
+        <img src="./assets/img/png/maloik.png" alt="Memory Card" class="back-face">
+      </div>
+      <div class="memory-card" data-framework="drum">
+        <img class="front-face" src="./assets/img/png/drum.png" alt="Drum">
+        <img src="./assets/img/png/maloik.png" alt="Memory Card" class="back-face">
+      </div>
+      <div class="memory-card" data-framework="drum">
+        <img class="front-face" src="./assets/img/png/drum.png" alt="Drum">
+        <img src="./assets/img/png/maloik.png" alt="Memory Card" class="back-face">
+      </div>
+      <div class="memory-card" data-framework="guitar">
+        <img class="front-face" src="./assets/img/png/electric-guitar.png" alt="Electric Guitar">
+        <img src="./assets/img/png/maloik.png" alt="Memory Card" class="back-face">
+      </div>
+      <div class="memory-card" data-framework="guitar">
+        <img class="front-face" src="./assets/img/png/electric-guitar.png" alt="Electric Guitar">
+        <img src="./assets/img/png/maloik.png" alt="Memory Card" class="back-face">
+      </div>
+      <div class="memory-card" data-framework="headphones">
+        <img class="front-face" src="./assets/img/png/headphones.png" alt="Headphones">
+        <img src="./assets/img/png/maloik.png" alt="Memory Card" class="back-face">
+      </div>
+      <div class="memory-card" data-framework="headphones">
+        <img class="front-face" src="./assets/img/png/headphones.png" alt="Headphones">
+        <img src="./assets/img/png/maloik.png" alt="Memory Card" class="back-face">
+      </div>
+      <div class="memory-card" data-framework="jack">
+        <img class="front-face" src="./assets/img/png/jack.png" alt="Jack">
+        <img src="./assets/img/png/maloik.png" alt="Memory Card" class="back-face">
+      </div>
+      <div class="memory-card" data-framework="jack">
+        <img class="front-face" src="./assets/img/png/jack.png" alt="Jack">
+        <img src="./assets/img/png/maloik.png" alt="Memory Card" class="back-face">
+      </div>
+      <div class="memory-card" data-framework="microphone">
+        <img class="front-face" src="./assets/img/png/microphone.png" alt="Microphone">
+        <img src="./assets/img/png/maloik.png" alt="Memory Card" class="back-face">
+      </div>
+      <div class="memory-card" data-framework="microphone">
+        <img class="front-face" src="./assets/img/png/microphone.png" alt="Microphone">
+        <img src="./assets/img/png/maloik.png" alt="Memory Card" class="back-face">
+      </div>
+      <div class="memory-card" data-framework="sunglasses">
+        <img class="front-face" src="./assets/img/png/sunglasses.png" alt="Sunglasses">
+        <img src="./assets/img/png/maloik.png" alt="Memory Card" class="back-face">
+      </div>
+      <div class="memory-card" data-framework="sunglasses">
+        <img class="front-face" src="./assets/img/png/sunglasses.png" alt="Sunglasses">
+        <img src="./assets/img/png/maloik.png" alt="Memory Card" class="back-face">
+      </div>
+    </div>
+    <div class="table">
+      <h2 class="table-title">Recent records</h2>
+      <table>
+        <tr>
+          <td>01.</td>
+          <td class="score-rec 1"></td>
+        </tr>
+        <tr>
+          <td>02.</td>
+          <td class="score-rec 2"></td>
+        </tr>
+        <tr>
+          <td>03.</td>
+          <td class="score-rec 3"></td>
+        </tr>
+        <tr>
+          <td>04.</td>
+          <td class="score-rec 4"></td>
+        </tr>
+        <tr>
+          <td>05.</td>
+          <td class="score-rec 5"></td>
+        </tr>
+        <tr>
+          <td>06.</td>
+          <td class="score-rec 6"></td>
+        </tr>
+        <tr>
+          <td>07.</td>
+          <td class="score-rec 7"></td>
+        </tr>
+        <tr>
+          <td>08.</td>
+          <td class="score-rec 8"></td>
+        </tr>
+        <tr>
+          <td>09.</td>
+          <td class="score-rec 9"></td>
+        </tr>
+        <tr>
+          <td>10.</td>
+          <td class="score-rec 10"></td>
+        </tr>
+      </table>
+    </div>
+  </section>
+  <section class="controls">
+    <div class="container">
+      <p class="score">
+        Current score: <span class="result"></span>
+      </p>
+      <button class="restart-btn">Restart game <img src="./assets/img/png/reset.png" alt="Restart"></button>
+    </div>
+  </section>
+  <div class="congrats-bg hidden">
+    <div class="congrats">
+      <p class="congrats-text">Congratulations! You finished the game with <span class="result"></span> moves!</p>
+      <div class="congrats-img">
+        <img src="./assets/img/png/peace.png" alt="peace">
+      </div>
+      <button class="restart-btn">Restart game <img src="./assets/img/png/reset.png" alt="Restart"></button>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="github">
+        <a href="https://github.com/thelastandrew" target="_blank"><img src="./assets/img/png/github-logo.png"
+            alt="Github"></a>
+      </div>
+      <div class="credits">
+        <a href="https://www.flaticon.com/packs/rock-and-roll-66" target="_blank">Rock and Roll icons</a> created by <a
+          href="https://www.freepik.com/" target="_blank">Freepik</a>
+      </div>
+      <div class="rss-school">
+        <a href="https://rs.school/js-stage0/" target="_blank"><img src="./assets/img/svg/rs_school_js.svg"
+            alt="RSS Logo"></a>
+      </div>
+    </div>
+
+  </footer>
+  <script src="./index.js"></script>
+</body>
+
+</html>
